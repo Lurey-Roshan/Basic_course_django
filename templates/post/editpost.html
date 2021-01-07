@@ -1,0 +1,19 @@
+<h1>Edit Post Page</h1>
+
+
+{% if p %}
+ 
+ <h1>Tile: {{p.title}}</h1>
+ <h6>Body:</h6><p>{{p.body}}</p>
+
+ {% endif %}
+
+ {% if form %}
+<form method="POST">
+	{{form.as_p}}
+	{% csrf_token %}
+	<input type="submit" name="submit" value="submit">
+</form>
+ 
+
+ {% endif %}

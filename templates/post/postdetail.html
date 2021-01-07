@@ -1,6 +1,7 @@
 <h1>Detail page</h1>
 {% if post %}
-	<h3>{{post.title}}</h3>
-	<p>{{post.body}}</p>
+	<h3>Title: {{post.title}}</h3>
+	<h6>Body</h6><p>{{post.body}}</p>
 	<a href="{% url 'postindex' %}">back</a>
+	<a href="{% url 'editpost' post.id %}"> Edit Post</a>
 {% endif %}

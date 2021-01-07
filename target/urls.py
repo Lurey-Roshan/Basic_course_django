@@ -8,5 +8,7 @@ urlpatterns = [
     path('aboutus',views.about_us, name='about-us'),
     path('post_index',views.post_index, name='postindex'),
     path('post/<int:pk>',views.post_detail, name='postdetail'),
-    path('post/<int:pk>/remove', views.post_delete, name='deletepost')
+    path('post/<int:pk>/remove', views.post_delete, name='deletepost'),
+    path('post/create', views.Createpost, name='createpost'),
+    path('post/<int:pk>/edit', views.updatepost, name="editpost")
 ]
