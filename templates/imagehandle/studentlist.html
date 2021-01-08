@@ -1,0 +1,12 @@
+<h1>Student List page</h1>
+
+{% if student %}
+	{% for s in student %}
+		<h6>Name:</h6>{{s.name}}
+		<p>{{s.roll_no}}</p>
+		<img src="{{s.image.url}}" style="height: 100px; width: 100px">
+		<br>
+		<hr>
+	{% endfor %}
+
+{% endif %}
