@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('target.urls')),
-    path('student',include('imagehandle.urls')),
+    path('student/',include('imagehandle.urls')),
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns +=staticfiles_urlpatterns()
