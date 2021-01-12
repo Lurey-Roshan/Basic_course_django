@@ -1,1 +1,22 @@
 <h1>Student edit</h1>
+{% if messages %}
+{% for m in messages %}
+
+{{m.message}}
+{%endfor%}
+{% endif %}
+{% if student %}
+<p>Name: {{student.name}}</p>
+<p>Roll No: {{student.roll_no}}</p>
+<p><img src="{{student.image.url}}"></p>
+{% endif %}
+{% if form %}
+<form method="POST" enctype="multipart/form-data">
+	{{form.as_p}}
+	{% csrf_token%}
+	
+	<input type="submit" name="submit" value="Update">
+	
+	
+</form>
+{% endif %}

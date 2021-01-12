@@ -1,8 +1,13 @@
 <h1>Student List page</h1>
+{% if messages %}
+{% for m in messages %}
 
+{{m.message}}
+{%endfor%}
+{% endif %}
 {% if student %}
 	{% for s in student %}
-		<h6>Name:</h6>{{s.name}}
+		<a href="{% url 'studentdetail' s.id%}"><h6>Name:{{s.name}}</h6></a>
 		<p>{{s.roll_no}}</p>
 		<img src="{{s.image.url}}" style="height: 100px; width: 100px">
 		<br>

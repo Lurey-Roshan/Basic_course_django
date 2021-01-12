@@ -1,0 +1,13 @@
+{% if messages %}
+{% for m in messages %}
+{{m.message}}
+{% endfor %}
+{% endif %}
+
+{% if student %}
+	<h2>Name: {{student.name}}</h2>
+	<p>Roll No. : {{student.roll_no}}</p>
+	<p><img src="{{student.image.url}}" alt="{{student.name}}'s photo"></p>
+<a href="{% url 'deletestudent' student.id %}"> Delete</a>
+<a href="{% url 'editstudent' student.id %}"> Edit</a>
+{% endif %}
