@@ -1,10 +1,14 @@
 <h1>Student List page</h1>
 {% if messages %}
-{% for m in messages %}
+	{% for m in messages %}
 
-{{m.message}}
-{%endfor%}
+		{{m.message}}
+
+	{%endfor%}
+
 {% endif %}
+
+
 {% if student %}
 	{% for s in student %}
 		<a href="{% url 'studentdetail' s.id%}"><h6>Name:{{s.name}}</h6></a>

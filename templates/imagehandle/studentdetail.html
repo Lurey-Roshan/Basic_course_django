@@ -10,4 +10,5 @@
 	<p><img src="{{student.image.url}}" alt="{{student.name}}'s photo"></p>
 <a href="{% url 'deletestudent' student.id %}"> Delete</a>
 <a href="{% url 'editstudent' student.id %}"> Edit</a>
+<a href="{% url 'studentlist'%}">Back</a>
 {% endif %}

@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('target.urls')),
     path('student/',include('imagehandle.urls')),
+    path('members/',include('member.urls')),
+    path('members/',include('django.contrib.auth.urls'))
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns +=staticfiles_urlpatterns()

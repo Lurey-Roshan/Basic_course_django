@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 from imagehandle.models import Student
 from imagehandle.forms import CreateStudentForm,StudentEditForm
 
+@login_required(login_url='login')
 def StudentList(request):
 	student=Student.objects.all().order_by('name')
 	context={
@@ -15,7 +17,7 @@ def StudentList(request):
 def CreateNewStudent(request):
 	a=CreateStudentForm()
 	if request.method=="POST":
-		a=CreateStudentForm(request.POST, request.FILES, instance=p)
+		a=CreateStudentForm(request.POST, request.FILES)
 		if a.is_valid():
 			new=Student(
 				name=a.cleaned_data['name'],

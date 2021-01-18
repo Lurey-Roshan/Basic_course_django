@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'target',
     'imagehandle',
+    'member',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,5 @@ MEDIA_URL= '/media/'
 STATICFILES_DIR=[
     STATIC_DIR,
     ]
+LOGIN_REDIRECT_URL='home'
+LOGOUT_REDIRECT_URL='home'
