@@ -1,0 +1,11 @@
+<h1>Profile page</h1>
+{% if profile %}
+<p>username:{{user.username}} </p>
+<p>Address:{{profile.address}}</p>
+<p>Contact No:{{profile.contactno}}</p>
+<p>Email: {{user.email}}</p>
+
+<img src="{{profile.imageURL}}" alt="Image not found">
+{% endif %}
+<a href="{% url 'updateprofile'%}"> Update Profile</a>
+

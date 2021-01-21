@@ -1,0 +1,17 @@
+<h1>User Profile Update</h1>
+<form method="POST" enctype="multipart/form-data">
+	{% if update_user %}
+	{{update_user.as_p}}
+	{% csrf_token %}
+
+	{% endif %}
+
+	{%if update_profile %}
+	
+	{{update_profile.as_p}}
+	{% csrf_token %}
+	{% endif %}
+
+	<input type="submit" name="Submit" value="Update">
+
+</form>
