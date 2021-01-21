@@ -7,6 +7,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
+
+
 def signup(request):
 	form=SignupForm()
 	if request.method=="POST":
@@ -56,4 +58,5 @@ def updateprofile(request):
 
 	}
 	return render(request, 'registration/update.html', context)
+
 

@@ -119,6 +119,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+#smtp simple mail transfer protocal
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'Your gmail '
+EMAIL_HOST_PASSWORD = 'yourgmail password'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL="from learning <donot.reply.@mail.com>"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
@@ -127,5 +136,9 @@ MEDIA_URL= '/media/'
 STATICFILES_DIR=[
     STATIC_DIR,
     ]
+    
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
+
+#EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+#EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))

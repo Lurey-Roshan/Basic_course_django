@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 from . import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
@@ -23,7 +24,11 @@ urlpatterns = [
     path('',include('target.urls')),
     path('student/',include('imagehandle.urls')),
     path('members/',include('member.urls')),
-    path('members/',include('django.contrib.auth.urls'))
+    path('members/',include('django.contrib.auth.urls')),
+    path('password_reset/', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'),name='password_reset'),
+    path('password_reset/done/',auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'),name='password_reset_done'),
+    path('password_reset_confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'),name='password_reset_confirm'),
+    path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),name='password_reset_complete')
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns +=staticfiles_urlpatterns()
